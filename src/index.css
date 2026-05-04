@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f3f6fb;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+  --text: #0f172a;
+  --text-soft: #475569;
+  --brand: #2563eb;
+  --brand-strong: #1d4ed8;
+  --accent: #f97316;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --ring: #3b82f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.45;
+  background:
+    radial-gradient(1200px 620px at -5% -25%, #dbeafe 0%, rgba(219, 234, 254, 0) 58%),
+    radial-gradient(900px 600px at 105% -15%, #e0e7ff 0%, rgba(224, 231, 255, 0) 54%),
+    var(--bg);
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: #bfdbfe;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+
+.skip-link:focus-visible {
+  left: 1rem;
+  top: 1rem;
+  z-index: 60;
+  border-radius: 0.5rem;
+  background: #111827;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.glass-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+}
+
+.brand-mark {
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 0.55rem;
+  background: linear-gradient(140deg, #1d4ed8, #2563eb, #0ea5e9);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.surface-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 24px -16px rgba(2, 6, 23, 0.25);
+}
+
+.surface-soft {
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: linear-gradient(to bottom right, #f8fafc, #ffffff);
+}
+
+.interactive {
+  transition: all 180ms ease;
+}
+
+.btn-primary {
+  border-radius: 0.625rem;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--brand), var(--brand-strong));
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  border-radius: 0.625rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: #fff;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(59, 130, 246, 0.55);
+  background: #eff6ff;
+}
+
+.input-enterprise,
+.textarea-enterprise,
+.select-enterprise {
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  color: #0f172a;
+  transition: all 160ms ease;
+}
+
+.textarea-enterprise {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.input-enterprise::placeholder,
+.textarea-enterprise::placeholder {
+  color: #94a3b8;
+}
+
+.input-enterprise:hover,
+.textarea-enterprise:hover,
+.select-enterprise:hover {
+  border-color: #94a3b8;
+}
+
+.input-enterprise:focus,
+.textarea-enterprise:focus,
+.select-enterprise:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+
+.input-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
+
+.role-tab {
+  border-radius: 0.6rem;
+  border: 1px solid transparent;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  transition: all 160ms ease;
+}
+
+.role-tab:hover {
+  border-color: rgba(37, 99, 235, 0.2);
+  background: rgba(37, 99, 235, 0.08);
+  color: #1d4ed8;
+}
+
+.role-tab-active {
+  border-color: rgba(37, 99, 235, 0.25);
+  background: rgba(37, 99, 235, 0.12);
+  color: #1d4ed8;
+}
+
+.metric-accent {
+  background: linear-gradient(180deg, rgba(249, 115, 22, 0.18), rgba(249, 115, 22, 0.06));
+  color: #9a3412;
+}
+
+.hint {
+  color: #64748b;
+  font-size: 0.75rem;
+}
